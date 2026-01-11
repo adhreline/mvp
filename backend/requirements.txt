@@ -1,0 +1,14 @@
+Django==5.2.7
+psycopg2-binary==2.9.10
+dj-rest-auth
+django-allauth
+django-cors-headers
+djangorestframework
+djangorestframework-simplejwt
+pillow
+channels
+daphne
+gunicorn
+python-dotenv
+phonenumbers
+whitenoise

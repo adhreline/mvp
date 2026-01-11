@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Vendor Approvals</title>
+</head>
+<body>
+    <h1>Pending Vendor Approvals</h1>
+
+    {% if pending_vendors %}
+        <table border="1" cellpadding="6" cellspacing="0">
+            <tr>
+                <th>ID</th>
+                <th>Business name</th>
+                <th>Email</th>
+                <th>Created at</th>
+                <th>Action</th>
+            </tr>
+            {% for v in pending_vendors %}
+            <tr>
+                <td>{{ v.id }}</td>
+                <td>{{ v.bname }}</td>
+                <td>{{ v.email }}</td>
+                <td>{{ v.created_at }}</td>
+                <td>
+                    <form method="post" style="display:inline;">
+                        {% csrf_token %}
+                        <input type="hidden" name="vendor_id" value="{{ v.id }}" />
+                        <button type="submit">Approve</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No pending vendors.</p>
+    {% endif %}
+
+    <p><a href="/admin/">Back to admin</a></p>
+</body>
+</html>

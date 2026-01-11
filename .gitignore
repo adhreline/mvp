@@ -1,0 +1,9 @@
+/env
+__pycache__
+**/__int__.py
+/media
+backend/.env
+backend/.env.prod
+backend/.env.dev
+backend/docker-compose.prod.yml
+.DS_Store
